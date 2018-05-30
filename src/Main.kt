@@ -26,9 +26,6 @@ fun calcFirstOrder(nodes: Vector, step: Double, alpha: Vector, beta: Vector, gam
         mtr[i][i + 1] = 1.0 / Math.pow(step, 2.0) + calcP(nodes[i]) / step
         vect[i] = calcF(nodes[i])
     }
-    //mtr.print()
-    //vect.print()
-    //println()
 
     return Matrix.calpRightSweep(mtr, vect)
 }
