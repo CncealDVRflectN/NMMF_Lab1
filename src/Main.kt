@@ -42,8 +42,8 @@ private fun calcBetaSecondOrder(beta: Vector, step: Double, nodes: Vector): Vect
 private fun calcAlphaSecondOrder(alpha: Vector, step: Double, betaSecond: Vector, nodes: Vector): Vector {
     val result = Vector(alpha.size)
 
-    result[0] = alpha[0] + calcQ(nodes[0]) * betaSecond[0] * step / 2
-    result[1] = alpha[1] - calcQ(nodes[nodes.size - 1]) * betaSecond[1] * step / 2
+    result[0] = alpha[0] + calcQ(nodes[0]) * betaSecond[0] * step / 2.0
+    result[1] = alpha[1] - calcQ(nodes[nodes.size - 1]) * betaSecond[1] * step / 2.0
 
     return result
 }
@@ -51,8 +51,8 @@ private fun calcAlphaSecondOrder(alpha: Vector, step: Double, betaSecond: Vector
 private fun calcGammaSecondOrder(gamma: Vector, step: Double, betaSecond: Vector, nodes: Vector): Vector {
     val result = Vector(gamma.size)
 
-    result[0] = gamma[0] + calcF(nodes[0]) * betaSecond[0] * step / 2
-    result[1] = gamma[1] - calcF(nodes[nodes.size - 1]) * betaSecond[1] * step / 2
+    result[0] = gamma[0] + calcF(nodes[0]) * betaSecond[0] * step / 2.0
+    result[1] = gamma[1] - calcF(nodes[nodes.size - 1]) * betaSecond[1] * step / 2.0
 
     return result
 }
